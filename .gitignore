@@ -1,11 +1,12 @@
 # Privacy: 真实学习数据不进 git
 # ====================================
-# 整个 data/ 默认 ignore,只保留 profile 模板和 trends.csv 表头
+# 整个 data/ 默认 ignore,只保留模板和 trends.csv 表头
+
 data/homework/inbox/*
 data/homework/parsed/*
 data/homework/done/*
 data/mistakes/inbox/*
-data/mistakes/subjects/*
+data/mistakes/subjects/*/*
 data/mistakes/review_queue/*
 data/plans/weekly/*
 data/plans/daily/*
@@ -15,6 +16,8 @@ data/parent-playbook/daily/*
 data/parent-playbook/weekend/*
 data/points/log.jsonl
 data/profile/strengths_archive/*
+data/memorization/queue.jsonl
+data/memorization/mastered.jsonl
 
 # 保留这些(占位 / 模板)
 !data/**/.gitkeep
