@@ -265,13 +265,30 @@ Openclaw-Study-Coach/
 
 ## 🛠️ 兼容性
 
-### Claude Code(推荐,最快)
+这份 workspace 同时支持三个 agent 平台,**一份 repo 就够,不用维护多份**:
 
-直接 clone 进任何目录,`cd` 进去跑 `claude`,自动加载 `CLAUDE.md` + 所有 skills + 三件套画像。
+### Claude Code(默认,最快)
+
+直接 clone 进任何目录,`cd` 进去跑 `claude`,自动加载 `CLAUDE.md` + 所有 skills + 三件套画像(通过 `@import` 机制)。
+
+### Codex CLI / OpenAI Codex
+
+完全兼容。`AGENTS.md` 是 Codex 的官方入口文件名(跟 OpenClaw 共用)。我们 workspace **本来就有 AGENTS.md**,顶部内置了「初始化协议」专门给 Codex 用。
+
+详细启动步骤见 [CODEX.md](CODEX.md)。简版:
+
+```bash
+cd Openclaw-Study-Coach
+codex
+# 然后第一句话发:
+# "请读 AGENTS.md,按顶部的初始化协议依次读 SOUL.md / USER.md / TOOLS.md / data/profile/*.md"
+```
+
+读完后 Codex 就完整加载了辅导员角色,后续用法跟 Claude Code 完全一样。
 
 ### OpenClaw
 
-把整个目录当 workspace,在 OpenClaw Control 里指定 workspace path,所有 SKILL.md / SOUL / USER / AGENTS / TOOLS 文件 OpenClaw 原生兼容。
+把整个目录当 workspace,在 OpenClaw Control 里指定 workspace path,所有 SKILL.md / SOUL / USER / AGENTS / TOOLS 文件 OpenClaw 原生兼容。AGENTS.md 顶部的初始化协议对 OpenClaw 也直接生效。
 
 ### 飞书 / Lark 入口(可选升级)
 

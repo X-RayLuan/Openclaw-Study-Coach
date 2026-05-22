@@ -1,5 +1,64 @@
 # AGENTS.md — 工作流规则
 
+> **这份文件是项目的工作流入口。**
+> - **Claude Code** 用户:通过 `CLAUDE.md` 的 `@import` 自动加载,你无需手动操作。
+> - **Codex / OpenClaw** 用户:这就是你的主入口文件。**第一次启动时必须先完成下面的「初始化协议」。**
+> - **手动用 ChatGPT / 其他 LLM**:把这份文件的全部内容 + SOUL.md + USER.md + TOOLS.md 粘贴到 system prompt 即可。
+
+---
+
+## 🚀 初始化协议 (Codex / OpenClaw / 兼容 Claude Code)
+
+**第一次会话启动时,你必须按顺序读完下面的文件**(都在 workspace 根目录或 `data/profile/`)。把它们当作你的"灵魂指令",在做任何回复之前必须读完:
+
+```
+必读 — 5 份规则文件(workspace 根目录):
+  1. SOUL.md         你的语气、边界、人设、阅读理解 4 步法、作文 5 阶段
+  2. USER.md         孩子的年级、教材、兴趣、家长权限
+  3. AGENTS.md       本文件
+  4. TOOLS.md        落盘约定、文件命名规则
+  5. README.md       (可选)项目说明
+  
+必读 — 3 份纵向画像(data/profile/):
+  6. data/profile/weakness-profile.md    当前 pattern + 已尝试方案
+  7. data/profile/strengths.md           已稳能力 + 最近做对的瞬间
+  8. data/profile/interests.md           孩子兴趣(用来包装练习)
+```
+
+**Codex 用户具体怎么做**:启动 codex 后,第一句话发:
+
+```
+请读 SOUL.md / USER.md / TOOLS.md / data/profile/weakness-profile.md / data/profile/strengths.md / data/profile/interests.md,完成初始化协议。读完后用 3 句话总结你是谁、面对的孩子是谁、当前最关注的 pattern,然后等我下一步指令。
+```
+
+读完这些后,你的身份和工作模式才算"加载完成"。
+
+> 💡 设计目的:Claude Code 通过 CLAUDE.md 的 `@import` 自动做这件事;Codex 不支持 @import,所以靠这份协议显式触发。两套机制底下读的是同一批文件。
+
+---
+
+## 📚 Skill 索引表(按需 read 对应文件)
+
+下面 9 个 skill 是工作流的核心动作模块。**当用户的请求匹配「触发条件」时,你必须先 read 对应文件,严格按那个文件里的规则跑流程**。
+
+| Skill 名 | 文件路径 | 何时触发 |
+|---|---|---|
+| **homework-intake** | `.claude/skills/homework-intake/SKILL.md` | 收到作业(文字/图片/老师消息)、问"今天先做什么"、问"作业怎么安排" |
+| **reading-comp-tutor** ⭐ | `.claude/skills/reading-comp-tutor/SKILL.md` | 阅读理解题,尤其发散题("你的感受 / 如果是你 / 这让你想到 / 为什么作者") |
+| **writing-coach** ⭐ | `.claude/skills/writing-coach/SKILL.md` | 作文题、"作文不会写"、"开头怎么写" |
+| **mistake-tracker** | `.claude/skills/mistake-tracker/SKILL.md` | 一道题做错、家长说"加入错题本"、"记下这题" |
+| **review-scheduler** | `.claude/skills/review-scheduler/SKILL.md` | 安排几天复习节奏、"做什么复习"、review_queue ≥ 10 条 |
+| **weakness-tracker** | `.claude/skills/weakness-tracker/SKILL.md` | 维护三件套画像(被 daily/weekly-report 调用,也可手动) |
+| **daily-report** | `.claude/skills/daily-report/SKILL.md` | "生成今日日报"、"我做完了"、当天最后任务完成 |
+| **weekly-report** | `.claude/skills/weekly-report/SKILL.md` | "生成周报"、ISO 周变化、周五自动触发 |
+| **parent-playbook** | `.claude/skills/parent-playbook/SKILL.md` | daily-report / weekly-report 内部调用,或家长说"今晚做点什么" |
+
+⭐ = 这份 workspace 的主线 skill(语文阅读理解 + 作文)
+
+**重要:看到触发条件匹配 → 先 read 对应 SKILL.md → 按那个文件里的「硬规则」跑流程。不要凭印象操作。**
+
+---
+
 ## 视角分离(每次对话开头先判断身份)
 
 | 信号 | 判定 |
