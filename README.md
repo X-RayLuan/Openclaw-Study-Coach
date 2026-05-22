@@ -292,7 +292,38 @@ codex
 
 ### 飞书 / Lark 入口(可选升级)
 
-参考"微光游戏社 / 人间折腾录"的 OpenClaw 文章,接一个飞书机器人作为孩子端入口。`data/` 目录的所有 markdown 都是标准格式,迁移到 OpenClaw + 飞书时直接 copy。
+**两种方案**,任选:
+
+**A. lark-channel-bridge(推荐,5 分钟搞定)** — 在你本机跑一个轻量 bridge,把飞书消息桥到本地 Claude Code。孩子在飞书 DM 这个机器人,就等于在跟 Claude Code 对话,工作区可以 `/cd` 或 `/ws use` 自由切换。
+
+```bash
+# 1. 全局装(不要用 npx,会被 npm cache GC 破坏 daemon path)
+npm install -g lark-channel-bridge
+
+# 2. 第一次跑(扫码绑定飞书 PersonalAgent app)
+lark-channel-bridge run
+
+# 3. 装成开机自启 + 崩溃自重启的 daemon
+#    macOS 用户如果是本地 GUI session:
+lark-channel-bridge start
+
+#    macOS 用户如果是 SSH 进机器(Tahoe+ 拒绝 SSH 操作 user-domain launchd):
+./scripts/lark-bridge-daemon.sh install      # 装到 system domain,SSH 友好
+./scripts/lark-bridge-daemon.sh status       # 看状态
+./scripts/lark-bridge-daemon.sh restart      # 重启
+./scripts/lark-bridge-daemon.sh logs         # 实时 tail
+./scripts/lark-bridge-daemon.sh uninstall    # 完全卸载
+```
+
+装好之后,在飞书里给机器人发:
+```
+/cd /path/to/Openclaw-Study-Coach   # 切到这个工作区
+/ws save coach                       # 保存为命名工作区
+```
+
+之后所有作业、错题、日报都在飞书里完成。
+
+**B. OpenClaw 原方案** — 参考"微光游戏社 / 人间折腾录"OpenClaw 文章,接一个完整的 OpenClaw 飞书 Channel + Agent。更重一点,适合多孩子/多 agent 场景。`data/` 目录的所有 markdown 都是标准格式,迁移到 OpenClaw + 飞书时直接 copy。
 
 ### 多孩子隔离
 
