@@ -2,9 +2,7 @@
 
 # Openclaw Study Coach
 
-### 给 K-12 学生(小学 / 初中 / 高中)的全科 AI 辅导员 · 含家长 Playbook
-
-**An AI tutoring agent for K-12 students (grade 1-12) covering Chinese / Math / English / Science (Physics+Chemistry+Biology) / Humanities (History+Geography+Politics), with a parent playbook for daily 3-minute family activities.**
+### K-12 全科 AI 辅导员 · K-12 AI Tutor · K-12 AI 学習チューター · K-12 AI 학습 튜터 · Tutor IA K-12
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 [![Claude Code](https://img.shields.io/badge/Claude_Code-Compatible-blueviolet)](https://claude.com/claude-code)
@@ -12,7 +10,7 @@
 [![OpenClaw](https://img.shields.io/badge/OpenClaw-Skill_Compatible-orange)](https://github.com/openclaw)
 [![Feishu](https://img.shields.io/badge/飞书Lark-Bridge_Supported-blue)](https://github.com/X-RayLuan/Openclaw-Study-Coach#-飞书--lark-入口)
 [![Version](https://img.shields.io/badge/Version-v0.2-brightgreen)](CHANGELOG.md)
-[![Language](https://img.shields.io/badge/Language-中文_%2F_English-red)](#)
+[![Languages](https://img.shields.io/badge/Languages-中%20%2F%20EN%20%2F%20JP%20%2F%20KR%20%2F%20ES-red)](#-多语言介绍--multilingual--多言語--다국어--multilingüe)
 
 [**📖 是什么**](#是什么) ·
 [**🎓 K-12 全科**](#-k-12-全学科覆盖) ·
@@ -22,6 +20,30 @@
 [**❓ FAQ**](#-faq常见问题)
 
 </div>
+
+---
+
+## 🌐 多语言介绍 / Multilingual / 多言語 / 다국어 / Multilingüe
+
+### 🇨🇳 中文
+
+**Openclaw Study Coach** 是一个**给 K-12(小学 / 初中 / 高中)学生的 AI 学习辅导员**,以 **markdown skill 包**的形式分发。可以在 **Claude Code / Codex CLI / OpenClaw** 上直接跑,**不需要任何前端、不需要部署服务器、不需要 API key 之外的费用**。覆盖**语数英 + 理科(物化生)+ 文综(史地政)5 大学科**,1-12 年级**学段自适应**(启蒙 / 巩固 / 初中 / 高中 4 档语气自动切换),含**家长 Playbook**(每天 3 分钟可做的具体亲子活动)。设计哲学来自[微光游戏社的 OpenClaw 系列文章](https://mp.weixin.qq.com/s/weQmKdFKEQKf7Oys1P1x4w)和教育学者**沈奕斐**的自驱力理论。
+
+### 🇬🇧 English
+
+**Openclaw Study Coach** is an **AI tutoring agent for K-12 students** (grades 1-12: elementary / middle / high school) distributed as a **markdown skill pack**. It runs directly on **Claude Code, Codex CLI, or OpenClaw** — **no frontend, no server, no cost beyond your LLM API key**. Covers **5 subject areas** (Chinese / Math / English / Science [Physics + Chemistry + Biology] / Humanities [History + Geography + Politics]) with **grade-adaptive teaching style** (4 tiers: kindling 1-3 / consolidation 4-6 / middle 7-9 / high 10-12). Includes a **Parent Playbook** — concrete 3-minute family activities you can do tonight, with specific dialogue. The underlying frameworks (4-step method for divergent questions, 5-step calculation, spaced repetition) are language-agnostic; translations welcome via PR.
+
+### 🇯🇵 日本語
+
+**Openclaw Study Coach** は、中国の K-12(小・中・高校)カリキュラムに対応した **AI 学習チューター**です。**markdown 形式の skill パック**として配布され、**Claude Code / Codex CLI / OpenClaw** で直接動作します。**フロントエンド不要、サーバー不要、LLM API キー以外の費用は一切かかりません**。**5 教科**(国語(中国語)・数学・英語・理科(物理・化学・生物)・社会(歴史・地理・政治))を網羅し、学年(1〜12)に応じて口調と難易度が自動調整されます(啓蒙期 / 定着期 / 中学期 / 高校期 の 4 段階)。毎日 3 分でできる具体的な親子アクティビティを生成する **Parent Playbook** も搭載。発散問題の 4 ステップ法、計算問題の 5 ステップ法、間隔反復記憶などの基本フレームワークは言語非依存であり、PR による多言語対応を歓迎します。
+
+### 🇰🇷 한국어
+
+**Openclaw Study Coach** 는 중국 **K-12(초·중·고) 커리큘럼**에 맞춘 **AI 학습 튜터**입니다. **markdown skill 팩** 형태로 배포되며, **Claude Code / Codex CLI / OpenClaw** 에서 바로 실행됩니다. **프론트엔드 불필요, 서버 불필요, LLM API 키 외 추가 비용 없음**. **5 과목**(국어(중국어) / 수학 / 영어 / 이과(물리·화학·생물) / 사회(역사·지리·정치))을 모두 다루며, 학년(1-12)에 따라 말투와 난이도가 자동으로 조정됩니다(계몽기 / 정착기 / 중등 / 고등 4단계). 매일 3분 부모-자녀 활동을 구체적으로 제안하는 **Parent Playbook** 포함. 핵심 프레임워크(발산 문제 4단계법, 계산 문제 5단계법, 간격 반복 기억)는 언어 비의존적이며 PR 을 통한 다국어 지원을 환영합니다.
+
+### 🇪🇸 Español
+
+**Openclaw Study Coach** es un **agente tutor de IA para estudiantes de K-12** (grados 1-12: primaria / secundaria / preparatoria), basado en el currículo educativo chino y distribuido como un **paquete de skills en markdown**. Se ejecuta directamente en **Claude Code, Codex CLI u OpenClaw** — **sin frontend, sin servidor, sin costos más allá de tu clave API de LLM**. Cubre **5 áreas** (Lengua [chino] / Matemáticas / Inglés / Ciencias [Física + Química + Biología] / Humanidades [Historia + Geografía + Política]) con **estilo de enseñanza adaptado al grado** (4 niveles: iniciación 1-3 / consolidación 4-6 / secundaria 7-9 / preparatoria 10-12). Incluye un **Parent Playbook** con actividades familiares concretas de 3 minutos al día, hasta el nivel de diálogo específico. Los marcos centrales (método de 4 pasos para preguntas divergentes, 5 pasos para cálculo, repetición espaciada) son agnósticos al idioma; PRs para traducciones son bienvenidos.
 
 ---
 
